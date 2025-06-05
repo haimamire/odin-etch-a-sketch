@@ -5,20 +5,22 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 .content {
+    max-width: 50lvw;
     margin: 10px 50px;
-}
-.row {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .square {
     background-color: black;
-    min-width: 20px;
-    min-height: 20px;
-    margin: 5px;
+    flex-basis: 6.25%;
+    min-width: 10px;
+    height: 10px;
 }
 .footer {
-    padding: 10px;
+    padding: 20px;
 }
