@@ -34,8 +34,8 @@ sizeButton.addEventListener(
         if (1 <= gridSize && gridSize <= 100 && gridSize % 1 === 0) {
             destroyGrid();
             createGrid(gridSize);
-
             const gridSquares = document.querySelectorAll(".square");
+
             gridSquares.forEach(
                 (square) => {
                     let opacity = 0;
@@ -44,9 +44,9 @@ sizeButton.addEventListener(
                         (e) => {
                             if (opacity < 1) {
                                 opacity = Math.round((opacity + 0.1) * 10) / 10;
-                                console.log(opacity);
+                                e.target.style.opacity = opacity;
                             }
-
+                            
                             e.target.style.backgroundColor = getRandomRgb();
                         }
                     );
@@ -55,6 +55,5 @@ sizeButton.addEventListener(
         } else {
             alert("Enter a valid grid size!");
         }
-
     }
 )
