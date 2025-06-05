@@ -23,9 +23,8 @@ sizeButton.addEventListener(
     "click",
     (e) => {
         const gridSize = prompt("Enter grid size:");
-        if (gridSize > 100) {
-            alert("Enter a valid grid size!");
-        } else {
+
+        if (1 <= gridSize && gridSize <= 100 && gridSize % 1 === 0) {
             destroyGrid();
             createGrid(gridSize);
 
@@ -40,6 +39,8 @@ sizeButton.addEventListener(
                     );
                 }
             );
+        } else {
+            alert("Enter a valid grid size!");
         }
 
     }
