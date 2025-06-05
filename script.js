@@ -31,7 +31,6 @@ sizeButton.addEventListener(
     "click",
     (e) => {
         const gridSize = prompt("Enter grid size:");
-
         if (1 <= gridSize && gridSize <= 100 && gridSize % 1 === 0) {
             destroyGrid();
             createGrid(gridSize);
@@ -39,9 +38,15 @@ sizeButton.addEventListener(
             const gridSquares = document.querySelectorAll(".square");
             gridSquares.forEach(
                 (square) => {
+                    let opacity = 0;
                     square.addEventListener(
                         "mouseover",
                         (e) => {
+                            if (opacity < 1) {
+                                opacity = Math.round((opacity + 0.1) * 10) / 10;
+                                console.log(opacity);
+                            }
+
                             e.target.style.backgroundColor = getRandomRgb();
                         }
                     );
