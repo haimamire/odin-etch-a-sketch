@@ -1,4 +1,4 @@
-const contentDiv = document.querySelector(".content");
+const contentDiv = document.querySelector(".grid");
 const sizeButton = document.querySelector("#grid-size-button");
 
 function createGrid(gridSize) {
@@ -30,7 +30,7 @@ function getRandomRgb() {
 sizeButton.addEventListener(
     "click",
     (e) => {
-        const gridSize = prompt("Enter grid size:");
+        const gridSize = prompt("Enter grid size (between 1 and 100):");
         if (1 <= gridSize && gridSize <= 100 && gridSize % 1 === 0) {
             destroyGrid();
             createGrid(gridSize);
