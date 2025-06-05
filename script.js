@@ -19,6 +19,14 @@ function destroyGrid() {
     squares.forEach((square) => square.remove());
 }
 
+function getRandomRgb() {
+    let values = [];
+    for (let i = 0; i < 3; i++) {
+        values.push(Math.floor(Math.random() * 256));
+    }
+    return `rgb(${values[0]}, ${values[1]}, ${values[2]})`
+}
+
 sizeButton.addEventListener(
     "click",
     (e) => {
@@ -34,7 +42,7 @@ sizeButton.addEventListener(
                     square.addEventListener(
                         "mouseover",
                         (e) => {
-                            e.target.style.backgroundColor = "red";
+                            e.target.style.backgroundColor = getRandomRgb();
                         }
                     );
                 }
