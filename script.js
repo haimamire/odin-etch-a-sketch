@@ -16,3 +16,15 @@ function createGrid() {
 }
 
 createGrid();
+
+const gridSquares = document.querySelectorAll(".square");
+gridSquares.forEach(
+    (square) => {
+        square.addEventListener(
+            "mouseover",
+            (e) => {
+                e.target.style.backgroundColor = "red";
+            }
+        );
+    }
+);
